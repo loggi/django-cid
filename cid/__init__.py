@@ -1,4 +1,8 @@
-import pkg_resources
+import sys
 
+if sys.version_info >= (3, 8):
+    from importlib.metadata import version
+else:
+    from importlib_metadata import version
 
-__version__ = pkg_resources.get_distribution('django-cid').version
+__version__ = version('django-cid')
